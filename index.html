@@ -110,20 +110,42 @@ section{padding:76px 0}
 .thumb.photo::before{left:18px}.thumb.photo::after{right:18px}
 .thumb.photo.single::after{display:none}
 .thumb.photo.single::before{left:calc(50% - 17px)}
-.thumb.pathwayThumb{background:linear-gradient(135deg,#eef7f2,#dfeee6);overflow:hidden}
-.pathwayOrigin{position:absolute;left:12px;top:23px;width:10px;height:10px;border-radius:50%;background:#4d5c78;box-shadow:0 0 0 4px rgba(255,255,255,.75)}
-.pathwayLine{position:absolute;left:20px;width:76px;height:4px;border-radius:999px;transform-origin:left center;box-shadow:0 2px 4px rgba(52,60,91,.12)}
-.pathwayLine.one{top:25px;background:#5f9eea;transform:rotate(-18deg)}
-.pathwayLine.two{top:27px;background:#9a79e8;transform:rotate(4deg)}
-.pathwayLine.three{top:29px;background:#eba75c;transform:rotate(23deg)}
-.pathwayDot{position:absolute;width:9px;height:9px;border-radius:50%;box-shadow:0 0 0 3px rgba(255,255,255,.72)}
-.pathwayDot.one{right:12px;top:10px;background:#5f9eea}
-.pathwayDot.two{right:7px;top:27px;background:#9a79e8}
-.pathwayDot.three{right:17px;bottom:7px;background:#eba75c}
-.pathwayCross{position:absolute;right:2px;bottom:0;color:#d75c66;font-size:20px;font-weight:900;line-height:1}
-.thumb.print{background:linear-gradient(180deg,#f8fbfd,#ebf0f4)}
-.thumb.print::before{content:"";position:absolute;left:50%;top:50%;width:28px;height:38px;transform:translate(-50%,-50%);border-radius:50%;border:3px solid #6b7285;border-top-color:transparent;border-bottom-color:#6b7285;box-shadow:inset 0 0 0 3px transparent}
-.thumb.print::after{content:"";position:absolute;left:50%;top:50%;width:4px;height:4px;background:#6b7285;border-radius:50%;transform:translate(-50%,-50%);box-shadow:8px -10px 0 #6b7285,-8px 10px 0 #6b7285}
+.thumb.caseThumb{background:linear-gradient(135deg,#eef6ff,#d9ebfb);overflow:hidden}
+.caseThumb::before{content:"";position:absolute;left:10px;top:9px;width:38px;height:34px;border-radius:9px;background:linear-gradient(180deg,#ffffff,#eef4fb);border:1px solid rgba(83,106,146,.12);box-shadow:0 4px 10px rgba(52,60,91,.08)}
+.caseThumb::after{content:"";position:absolute;left:17px;top:16px;width:22px;height:2px;background:#8fa3bf;box-shadow:0 7px 0 #b4c1d6,0 14px 0 #c7d1e0}
+.caseThumb .patient{position:absolute;right:12px;bottom:8px;width:30px;height:30px;border-radius:50%;background:#7f8ca5;box-shadow:0 -16px 0 2px #6d7891}
+.caseThumb .bubble{position:absolute;right:42px;top:12px;width:24px;height:18px;border-radius:9px 9px 9px 2px;background:rgba(255,255,255,.92);border:1px solid rgba(83,106,146,.12)}
+.caseThumb .bubble::before{content:"";position:absolute;left:6px;right:6px;top:7px;height:2px;background:#96a8c1}
+
+.pathwayThumb{background:linear-gradient(135deg,#eef7f2,#dfeee6);overflow:hidden}
+.pathwayThumb .pathwayLine{position:absolute;left:12px;height:3px;border-radius:999px;transform-origin:left center;box-shadow:0 2px 4px rgba(52,60,91,.10)}
+.pathwayThumb .pathwayLine.one{top:14px;width:82px;background:#5f9eea;transform:rotate(-12deg)}
+.pathwayThumb .pathwayLine.two{top:25px;width:80px;background:#9a79e8;transform:rotate(0deg)}
+.pathwayThumb .pathwayLine.three{top:36px;width:82px;background:#eba75c;transform:rotate(12deg)}
+
+.feedbackThumb{background:linear-gradient(180deg,#f4f8ff,#e5effd);overflow:hidden}
+.feedbackThumb .arrow{position:absolute;top:24px;width:30px;height:4px;border-radius:999px;opacity:0}
+.feedbackThumb .arrow::after{content:"";position:absolute;right:-1px;top:-4px;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:8px solid currentColor;color:inherit}
+.feedbackThumb .arrow.right{left:16px;color:#5a8de1;background:#5a8de1;animation:feedbackForward 2.8s ease-in-out infinite}
+.feedbackThumb .arrow.left{right:16px;color:#9a79e8;background:#9a79e8;transform:scaleX(-1);animation:feedbackBack 2.8s ease-in-out infinite}
+.feedbackThumb .axis{position:absolute;left:calc(50% - 1px);top:12px;bottom:12px;width:2px;background:rgba(108,123,160,.18)}
+@keyframes feedbackForward{0%,8%{opacity:0;transform:translateX(0)}18%,38%{opacity:1;transform:translateX(8px)}48%,100%{opacity:0;transform:translateX(14px)}}
+@keyframes feedbackBack{0%,52%{opacity:0;transform:scaleX(-1) translateX(0)}62%,82%{opacity:1;transform:scaleX(-1) translateX(8px)}92%,100%{opacity:0;transform:scaleX(-1) translateX(14px)}}
+
+.decisionThumb{background:linear-gradient(180deg,#fff4ee,#fde9de);overflow:hidden}
+.decisionThumb .dLine{position:absolute;left:12px;right:12px;height:2px;background:#b0bccf;border-radius:999px}
+.decisionThumb .dLine.one{top:12px;right:28px}
+.decisionThumb .dLine.two{top:20px;right:18px}
+.decisionThumb .dLine.three{top:28px;right:32px}
+.decisionThumb .dLine.four{top:36px;right:22px}
+.decisionThumb .underline{position:absolute;left:32px;top:28px;width:38px;height:8px;border-bottom:3px solid #5a8de1;border-radius:999px;transform:scaleX(0);transform-origin:left center;animation:decisionUnderline 2.8s ease-in-out infinite}
+.decisionThumb .circle{position:absolute;right:20px;top:14px;width:26px;height:18px;border:3px solid #d84f4f;border-radius:50%;opacity:0;transform:scale(.7);animation:decisionCircle 2.8s ease-in-out infinite}
+.decisionThumb .marker{position:absolute;right:14px;top:34px;width:22px;height:3px;background:#eba75c;border-radius:999px;opacity:0;animation:decisionMarker 2.8s ease-in-out infinite}
+@keyframes decisionUnderline{0%,12%{transform:scaleX(0);opacity:0}22%,48%{transform:scaleX(1);opacity:1}58%,100%{transform:scaleX(1);opacity:.15}}
+@keyframes decisionCircle{0%,34%{opacity:0;transform:scale(.7)}44%,72%{opacity:1;transform:scale(1)}82%,100%{opacity:.2;transform:scale(1)}}
+@keyframes decisionMarker{0%,55%{opacity:0;transform:translateX(-4px)}65%,85%{opacity:1;transform:translateX(0)}100%{opacity:0}}
+
+
 .thumb.chart{background:linear-gradient(180deg,#fefaf3,#fbefcf)}
 .thumb.chart::before{content:"";position:absolute;left:14px;bottom:10px;width:14px;height:14px;background:#e08a62;box-shadow:18px -12px 0 #8eb2dd,36px -4px 0 #e2b748,54px -20px 0 #7c90d8}
 .thumb.glass{background:linear-gradient(180deg,#eff8ff,#dbeeff)}
@@ -396,13 +418,13 @@ footer{padding:34px 0 46px;color:#7a869e}
         <path class="pathLine routeViolet" data-from="note-feedback" data-to="note-revision"></path>
       </svg>
 
-      <div class="note small" id="note-case" style="left:38px; top:56px; --r:-4deg; --paper:#eef8ff; --pin:#5aa4ef"><div class="thumb photo single"></div><b>case study</b><span>The learner enters through a real situation.</span></div>
+      <div class="note small" id="note-case" style="left:38px; top:56px; --r:-4deg; --paper:#eef8ff; --pin:#5aa4ef"><div class="thumb caseThumb"><span class="patient"></span><span class="bubble"></span></div><b>case study</b><span>The learner enters through a real situation.</span></div>
       <div class="note" id="note-evidence" style="left:205px; top:46px; --r:3deg; --paper:#fff0f6; --pin:#d8648f"><div class="thumb doc"></div><b>evidence extraction</b><span>Important details are separated from noise.</span></div>
       <div class="note center" id="note-insight" style="left:347px; top:208px; --r:-1deg; --paper:#fff9fb; --pin:#d84f4f"><div class="thumb doc"></div><b>instructional insight</b><span>The path from clue to conclusion makes reasoning visible.</span></div>
       <div class="note small" id="note-analysis" style="left:665px; top:58px; --r:5deg; --paper:#fff5dc; --pin:#d8a62e"><div class="thumb chart"></div><b>analysis</b><span>Patterns and relationships begin to emerge.</span></div>
-      <div class="note small" id="note-pathways" style="left:54px; top:372px; --r:-5deg; --paper:#eefcf3; --pin:#56b97b"><div class="thumb pathwayThumb"><span class="pathwayOrigin"></span><span class="pathwayLine one"></span><span class="pathwayLine two"></span><span class="pathwayLine three"></span><span class="pathwayDot one"></span><span class="pathwayDot two"></span><span class="pathwayDot three"></span><span class="pathwayCross">×</span></div><b>pathways</b><span>Alternative routes reveal what helps and what misleads.</span></div>
-      <div class="note" id="note-decision" style="left:224px; top:446px; --r:4deg; --paper:#fff2ea; --pin:#e27d55"><div class="thumb photo"></div><b>decision practice</b><span>The learner chooses, tests, and sees the consequence.</span></div>
-      <div class="note small" id="note-feedback" style="left:510px; top:390px; --r:-4deg; --paper:#f2f8ff; --pin:#6595e8"><div class="thumb print"></div><b>feedback</b><span>The decisive reason becomes clear.</span></div>
+      <div class="note small" id="note-pathways" style="left:54px; top:372px; --r:-5deg; --paper:#eefcf3; --pin:#56b97b"><div class="thumb pathwayThumb"><span class="pathwayLine one"></span><span class="pathwayLine two"></span><span class="pathwayLine three"></span></div><b>pathways</b><span>Alternative routes reveal what helps and what misleads.</span></div>
+      <div class="note" id="note-decision" style="left:224px; top:446px; --r:4deg; --paper:#fff2ea; --pin:#e27d55"><div class="thumb decisionThumb"><span class="dLine one"></span><span class="dLine two"></span><span class="dLine three"></span><span class="dLine four"></span><span class="underline"></span><span class="circle"></span><span class="marker"></span></div><b>decision practice</b><span>Important cues are marked, emphasized, and used to support the right choice.</span></div>
+      <div class="note small" id="note-feedback" style="left:510px; top:390px; --r:-4deg; --paper:#f2f8ff; --pin:#6595e8"><div class="thumb feedbackThumb"><span class="axis"></span><span class="arrow right"></span><span class="arrow left"></span></div><b>feedback</b><span>Direction becomes clearer through response and revision.</span></div>
       <div class="note small" id="note-revision" style="left:665px; top:486px; --r:2deg; --paper:#f3f0ff; --pin:#9e78ef"><div class="thumb glass"></div><b>revision</b><span>The next attempt becomes sharper and more confident.</span></div>
 
       <div class="magnifier" id="boardMagnifier" aria-hidden="true"><div class="lensGlint"></div></div>
